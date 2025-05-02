@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Login from './Login';
-import UserList from './UserList';
+import UserList from '../components/UserList';
 import axios from 'axios';
 import TodoList from '../components/TodoList';
+import styled from 'styled-components';
+import { style } from 'motion/react-client';
+import Category from '../components/Category';
 
 const Home = () => {
   // const [users, setUsers] = useState([]);
@@ -17,13 +20,21 @@ const Home = () => {
   // });
 
   return (
-    <>
-      <div>home</div>
-      {/* 
+    <Container>
+      <UserList />
+      <Category />
       <TodoList />
-      <UserList /> */}
-    </>
+    </Container>
   );
 };
 
 export default Home;
+
+const Container = styled.div`
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 12px;
+  margin: 0;
+  width: 800px;
+  height: 500px;
+`;

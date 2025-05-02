@@ -180,21 +180,87 @@
   "todos": [
     {
       "num": 1,
-      "text": "밥먹기",
-      "completed": false,
+      "text": "React",
+      "completed": true,
       "id": "2"
     },
     {
       "num": 2,
-      "text": "공부하기",
+      "text": "HTML",
       "completed": false,
       "id": "2"
     },
     {
       "num": 3,
-      "text": "과제하기",
+      "text": "CSS",
       "completed": false,
       "id": "2"
+    },
+    {
+      "num": 4,
+      "text": "JavaScript",
+      "completed": false,
+      "id": "2"
+    },
+    {
+      "num": 5,
+      "text": "Spring",
+      "completed": false,
+      "id": "2"
+    },
+    {
+      "num": 6,
+      "text": "Java",
+      "completed": false,
+      "id": "2"
+    },
+    {
+      "num": 7,
+      "text": "SourceTree",
+      "completed": false,
+      "id": "2"
+    },
+    {
+      "num": 8,
+      "text": "VSCode",
+      "completed": false,
+      "id": "2"
+    },
+    {
+      "num": 9,
+      "text": "IntelliJ",
+      "completed": false,
+      "id": "2"
+    },
+    {
+      "num": 10,
+      "text": "Figma",
+      "completed": false,
+      "id": "2"
+    },
+    {
+      "num": 11,
+      "text": "SQL",
+      "completed": false,
+      "id": "2"
+    },
+    {
+      "num": 1,
+      "text": "먹기",
+      "completed": false,
+      "id": "3"
+    },
+    {
+      "num": 2,
+      "text": "싸기",
+      "completed": false,
+      "id": "3"
+    },
+    {
+      "num": 3,
+      "text": "자기",
+      "completed": false,
+      "id": "3"
     }
   ],
   "login": [
