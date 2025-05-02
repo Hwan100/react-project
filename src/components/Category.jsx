@@ -13,10 +13,18 @@ const Category = () => {
       {selectUser.userId !== 0 ? <span>{selectUser.name}</span> : <span>{name}</span>}
       <Button>상세정보</Button>
       <div>
-        <Button>
+        <Button
+          onClick={() => {
+            window.open(selectUser.git);
+          }}
+        >
           <FaGithub />
         </Button>
-        <Button>
+        <Button
+          onClick={() => {
+            window.open(selectUser.blog);
+          }}
+        >
           <FaBlog />
         </Button>
       </div>

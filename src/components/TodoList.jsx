@@ -11,6 +11,19 @@ const TodoList = () => {
     setItems(todos);
   }, []);
 
+  const addItem = () => {
+    const newItem = {
+      num: items.length + 1,
+      text: `New Item ${items.length + 1}`,
+    };
+    setItems([...items, newItem]);
+  };
+
+  const removeItem = (num) => {
+    setItems(items.filter((item) => item.num !== num));
+  };
+
+  console.log(items);
   return (
     <Container>
       <Reorder.Group
@@ -48,6 +61,15 @@ const TodoList = () => {
           </Reorder.Item>
         ))}
       </Reorder.Group>
+      <button
+        onClick={addItem}
+        style={{ position: 'absolute', left: '-164px', top: '400px', border: '1px solid black' }}
+      >
+        Add Item +
+      </button>
+      <button onClick={addItem} style={{ position: 'absolute', left: '380px', top: '14px', background: 'none' }}>
+        ❌{/* 로그아웃 */}
+      </button>
     </Container>
   );
 };
@@ -60,4 +82,5 @@ const Container = styled.div`
   border-radius: 0px 12px 12px 0px;
   background: white;
   height: 100%;
+  position: relative;
 `;

@@ -33,7 +33,7 @@ const UserList = () => {
       {users.map(
         (user) =>
           !user.status && (
-            <div id="offline" key={user.id}>
+            <div id="offline" key={user.id} onClick={() => click(user.id)}>
               {user.name} 🔴
             </div>
           )
