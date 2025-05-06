@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Reorder } from 'framer-motion';
 import userStore from '../store/userStore';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const TodoList = () => {
-  const { todos, save } = userStore();
+  const { todos, logout } = userStore();
   const [items, setItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setItems(todos);
@@ -21,6 +23,11 @@ const TodoList = () => {
 
   const removeItem = (num) => {
     setItems(items.filter((item) => item.num !== num));
+  };
+
+  const logOut = () => {
+    logout;
+    navigate('/login');
   };
 
   console.log(items);
@@ -48,6 +55,9 @@ const TodoList = () => {
             key={item.num}
             value={item}
             style={{
+              display: 'flex',
+              justifyContent: 'space-around',
+              alignItems: 'flex-start',
               width: '70%',
               textAlign: 'center',
               background: '#e4e4e4',
@@ -57,7 +67,9 @@ const TodoList = () => {
               boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
             }}
           >
+            <div></div>
             {item.text}
+            <Button onClick={() => removeItem(item.num)}>x</Button>
           </Reorder.Item>
         ))}
       </Reorder.Group>
@@ -67,9 +79,22 @@ const TodoList = () => {
       >
         Add Item +
       </button>
-      <button onClick={addItem} style={{ position: 'absolute', left: '380px', top: '14px', background: 'none' }}>
-        ❌{/* 로그아웃 */}
-      </button>
+      <Button
+        onClick={() => logOut()}
+        style={{
+          position: 'absolute',
+          left: '390px',
+          top: '14px',
+          background: 'none',
+          width: '50px',
+          height: '50px',
+          textAlign: 'center',
+          border: 'none',
+          alignItems: 'center',
+        }}
+      >
+        ❌
+      </Button>
     </Container>
   );
 };
@@ -83,4 +108,21 @@ const Container = styled.div`
   background: white;
   height: 100%;
   position: relative;
+`;
+
+const Button = styled.button`
+  color: red;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 `;
