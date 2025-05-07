@@ -3,15 +3,23 @@ import styled from 'styled-components';
 import selectUserStore from '../store/selectUserStore';
 import userStore from '../store/userStore';
 import { FaBlog, FaGithub } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Category = () => {
   const { name } = userStore();
   const selectUser = selectUserStore();
+  const navigate = useNavigate();
 
   return (
     <Container>
       {selectUser.userId !== 0 ? <span>{selectUser.name}</span> : <span>{name}</span>}
-      <Button>상세정보</Button>
+      <Button
+        onClick={() => {
+          navigate(`/user/${selectUser.userId}`);
+        }}
+      >
+        상세정보
+      </Button>
       <div>
         <Button
           onClick={() => {

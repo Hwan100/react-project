@@ -77,7 +77,6 @@ const TodoList = () => {
               boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
             }}
           >
-            <div></div>
             {item.text}
             <Button onClick={() => removeItem(item.num)}>x</Button>
           </Reorder.Item>

@@ -261,12 +261,6 @@
       "num": 3,
       "text": "자기",
       "completed": false
-    },
-    {
-      "id": "1",
-      "num": 1,
-      "text": "New Item 1",
-      "completed": false
     }
   ],
   "login": [
