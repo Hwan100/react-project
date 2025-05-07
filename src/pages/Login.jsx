@@ -34,6 +34,8 @@ const Login = () => {
     if (status === true) navigate('/home');
   };
 
+  useEffect(() => {}, [status]);
+
   return status ? (
     <Home />
   ) : (

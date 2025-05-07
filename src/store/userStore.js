@@ -46,7 +46,7 @@ const userStore = create((set, get) => ({
       }
     }
   },
-  logout: async () => set((state) => ({ status: (state.status = false) })),
+  logout: () => set(() => ({ ...get(), status: false })),
 }));
 
 export default userStore;

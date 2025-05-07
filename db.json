@@ -245,22 +245,28 @@
       "id": "2"
     },
     {
+      "id": "3",
       "num": 1,
       "text": "먹기",
-      "completed": false,
-      "id": "3"
+      "completed": false
     },
     {
+      "id": "3",
       "num": 2,
       "text": "싸기",
-      "completed": false,
-      "id": "3"
+      "completed": false
     },
     {
+      "id": "3",
       "num": 3,
       "text": "자기",
-      "completed": false,
-      "id": "3"
+      "completed": false
+    },
+    {
+      "id": "1",
+      "num": 1,
+      "text": "New Item 1",
+      "completed": false
     }
   ],
   "login": [

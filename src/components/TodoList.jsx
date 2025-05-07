@@ -3,34 +3,44 @@ import { Reorder } from 'framer-motion';
 import userStore from '../store/userStore';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import selectUserStore from '../store/selectUserStore';
+import axios from 'axios';
 
 const TodoList = () => {
-  const { todos, logout } = userStore();
+  const { logout } = userStore();
+  const { userId, todos } = selectUserStore();
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     setItems(todos);
-  }, []);
+  }, [todos]);
 
-  const addItem = () => {
+  console.log(items);
+  const addItem = async () => {
     const newItem = {
       num: items.length + 1,
       text: `New Item ${items.length + 1}`,
+      completed: false,
+      id: userId,
     };
-    setItems([...items, newItem]);
+    const response = await axios.post(`http://localhost:3001/todos`, newItem);
+
+    setItems((prevItems) => [...prevItems, response.data]);
+
+    // setItems([...items, newItem]);
   };
 
-  const removeItem = (num) => {
+  const removeItem = async (num) => {
     setItems(items.filter((item) => item.num !== num));
+    // await axios.delete(`http://localhost:3001/todos`, { data: { num } });
   };
 
   const logOut = () => {
     logout;
-    navigate('/login');
+    navigate('/error');
   };
 
-  console.log(items);
   return (
     <Container>
       <Reorder.Group
@@ -56,7 +66,7 @@ const TodoList = () => {
             value={item}
             style={{
               display: 'flex',
-              justifyContent: 'space-around',
+              justifyContent: 'space-between',
               alignItems: 'flex-start',
               width: '70%',
               textAlign: 'center',

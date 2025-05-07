@@ -37,5 +37,5 @@ const Container = styled.div`
   margin: 0;
   width: 800px;
   height: 500px;
-  box-shadow: 10px 100px 100px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
 `;
